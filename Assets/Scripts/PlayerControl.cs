@@ -35,6 +35,7 @@ public class PlayerControl : MonoBehaviour
         else if (other.gameObject.CompareTag("Life")) {
             if (life < 3) {
                 life++;
+                AudioManager.instance.PlaySoundlifePickup(gameObject);
                 TextLife.text = life.ToString();
                 Destroy(other.gameObject);
             }
@@ -54,6 +55,7 @@ public class PlayerControl : MonoBehaviour
 
     void HurtPlayer() {
         life--;
+        AudioManager.instance.PlaySoundlifeLost(gameObject);
         TextLife.text = life.ToString();
         if (life == 0){
             KillPlayer();

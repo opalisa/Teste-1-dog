@@ -12,7 +12,15 @@ public class AudioManager : MonoBehaviour
            instance = this;
         }
 
-    }    
+    }  
+
+    public void PlaySoundlifePickup(GameObject obj) {
+        AudioSource.PlayClipAtPoint(audioSFX.lifePickup, obj.transform.position);
+    }  
+
+    public void PlaySoundlifeLost(GameObject obj) {
+        AudioSource.PlayClipAtPoint(audioSFX.lifeLost, obj.transform.position);
+    }
 
     public void PlaySoundbonePickup(GameObject obj) {
         AudioSource.PlayClipAtPoint(audioSFX.bonePickup, obj.transform.position);
